@@ -1,9 +1,0 @@
-{
-  "owner": {
-    "username": "nombre_de_usuario_github",
-    "email": "correo@ejemplo.com"
-  },
-  "records": {
-    "CNAME": ["destino.vercel.app"]
-  }
-}
