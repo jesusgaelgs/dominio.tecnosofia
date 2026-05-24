@@ -1,0 +1,26 @@
+name: Gestor de DNS Technosofia
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'domains/*.json'
+
+jobs:
+  desplegar-subdominio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Prueba de entorno y conexión
+        env:
+          API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ZONE_ID: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          echo "¡Terminal de Ubuntu iniciada correctamente!"
+          echo "Buscando archivos JSON en la carpeta domains..."
+          ls -la domains/
+          echo "Las llaves de Cloudflare están cargadas en la memoria de forma segura."
+          echo "Motor listo para inyectar comandos curl."
